@@ -30,12 +30,12 @@ RUN rm -f /tmp/apache-tomcat-8.0.26.tar.gz
 
 # Set all correct permisions for group and user to install BIMserver and edit conf
 
-RUN chgrp -R tomcat /opt/tomcat/conf \
-	chmod g+rwx /opt/tomcat/conf \
-	chmod g+r /opt/tomcat/conf/* \
-	chown -R tomcat /opt/tomcat/work/ /opt/tomcat/temp/ /opt/tomcat/logs/ \
-	chown -R tomcat /opt && chown -R tomcat /opt/tomcat/webapps \
-	chmod a+rwx /opt && chmod a+rwx /opt/tomcat/webapps
+RUN chgrp -R tomcat /opt/tomcat/conf
+RUN chmod g+rwx /opt/tomcat/conf
+RUN chmod g+r /opt/tomcat/conf/*
+RUN chown -R tomcat /opt/tomcat/work/ /opt/tomcat/temp/ /opt/tomcat/logs/
+RUN chown -R tomcat /opt && chown -R tomcat /opt/tomcat/webapps
+RUN chmod a+rwx /opt && chmod a+rwx /opt/tomcat/webapps
 
 # Install BIMserver
 
