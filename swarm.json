@@ -1,0 +1,12 @@
+{
+  "name": "bimserver",
+  "components": {
+    "webserver": {
+      "image": "bimscript/docker-bimserver",
+      "ports": 8080,
+      "domains": {
+        "$domain": "8080"
+      }
+    }
+  }
+}
