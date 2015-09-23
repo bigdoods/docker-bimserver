@@ -18,7 +18,7 @@ RUN dpkg-reconfigure -f noninteractive tzdata
 
 ################## BEGIN INSTALLATION ######################
 
-# Create Tomcat root dir, set up users and install Tomcat
+# Create Tomcat root dir, set up users and install Tomcat (ver 8.0.26)
 
 RUN mkdir /opt/tomcat
 RUN groupadd tomcat
@@ -37,9 +37,9 @@ RUN chown -R tomcat /opt/tomcat/work/ /opt/tomcat/temp/ /opt/tomcat/logs/
 RUN chown -R tomcat /opt && chown -R tomcat /opt/tomcat/webapps
 RUN chmod a+rwx /opt && chmod a+rwx /opt/tomcat/webapps
 
-# Install BIMserver
+# Install BIMserver (ver1.4.0-2015-09-23)
 
-RUN wget https://github.com/opensourceBIM/BIMserver/releases/download/1.4.0-FINAL-2015-09-14/bimserver-1.4.0-FINAL-2015-09-14.war \
+RUN wget https://github.com/opensourceBIM/BIMserver/releases/download/1.4.0-FINAL-2015-09-23/bimserver-1.4.0-FINAL-2015-09-23.war \
 	-O /opt/tomcat/webapps/BIMserver.war
 
 # Set environment paths for Tomcat
