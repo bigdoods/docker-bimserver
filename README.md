@@ -8,8 +8,4 @@ $ docker run -d \
 	-e TOMCAT_PASSWORD=xxx \
 	-p 8080:8080 \
 	bimscript/docker-bimserver
-<<<<<<< HEAD
 ```
-=======
-```
->>>>>>> a9a03b18cd2ba0b896bac7f13566fb20d3bab2e0
