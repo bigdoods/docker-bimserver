@@ -56,7 +56,7 @@ ADD ./run.sh /opt/run.sh
 
 # Install WebGL-threeJS viewer
 
-RUN wget https://github.com/opensourceBIM/WebGL-threeJS/releases/download/0.5/threejs-20150924-0.5.jar -O /opt/tomcat/webapps/BIMserver/WEB-INF/plugins
+RUN wget https://github.com/opensourceBIM/WebGL-threeJS/releases/download/0.5/threejs-20150924-0.5.jar -O /opt/tomcat/webapps/BIMserver/WEB-INF/plugins/threejs-20150924-0.5.jar
 
 ##################### INSTALLATION END #####################
 
