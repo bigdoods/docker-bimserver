@@ -54,6 +54,10 @@ ENV CATALINA_OPTS="-Xms512M -Xmx1024M -server -XX:+UseParallelGC"
 ADD ./web.xml /opt/tomcat/webapps/manager/WEB-INF/web.xml
 ADD ./run.sh /opt/run.sh
 
+# Install WebGL-threeJS viewer
+
+RUN wget https://github.com/opensourceBIM/WebGL-threeJS/releases/download/0.5/threejs-20150924-0.5.jar -O /opt/tomcat/webapps/BIMserver/WEB-INF/plugins
+
 ##################### INSTALLATION END #####################
 
 USER tomcat
