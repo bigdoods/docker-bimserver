@@ -8,5 +8,5 @@ $ docker run -d \
 	-e TOMCAT_PASSWORD=xxx \
 	-p 8080:8080 \
 	--restart=always \
-	bimscript/docker-bimserver
+	jenca/docker-bimserver
 ```
