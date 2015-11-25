@@ -10,7 +10,7 @@ if [[ -z "$TOMCAT_PASSWORD" ]]; then
     exit 1
 fi
 
-cat <<EOF > /opt/tomcat/webapps/manager/WEB-INF/web.xml
+cat <<EOF > /opt/tomcat/conf/tomcat-users.xml
 <?xml version='1.0' encoding='utf-8'?>
 <tomcat-users xmlns="http://tomcat.apache.org/xml"
               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
