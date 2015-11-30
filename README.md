@@ -2,14 +2,12 @@
 
 A docker image to deploy:
 
-```bash
 BIMserver 1.4.0 (FINAL-2015-11-04)
-```
 
 on a remote server with Ubuntu14.04x64. The Dockerfile will install dependencies such as JDK and Tomcat 8.0.26 and then install BIMserver 1.4.0 into the webapps dir inside Tomcats home. Simply SSH into a server, install Docker with
 
 ```bash
-wget -qO- https://get.docker.com/ | sh
+$ wget -qO- https://get.docker.com/ | sh
 ```
 
 and run the following (change username and password to your own choice):
