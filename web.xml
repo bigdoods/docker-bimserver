@@ -51,9 +51,9 @@
     </init-param>
     -->
     <multipart-config>
-      <!-- 200MB max -->
-      <max-file-size>200000000</max-file-size>
-      <max-request-size>200000000</max-request-size>
+      <!-- 500MB max -->
+      <max-file-size>500000000</max-file-size>
+      <max-request-size>500000000</max-request-size>
       <file-size-threshold>0</file-size-threshold>
     </multipart-config>
   </servlet>
