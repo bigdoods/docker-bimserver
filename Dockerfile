@@ -4,7 +4,7 @@
 ############################################################
 
 FROM ubuntu:14.04
-MAINTAINER connoralexander@bimscript.com
+MAINTAINER connor@jenca.io
 
 # Initialise software and update the repository sources list
 
@@ -37,7 +37,7 @@ RUN chown -R tomcat /opt/tomcat/work/ /opt/tomcat/temp/ /opt/tomcat/logs/
 RUN chown -R tomcat /opt && chown -R tomcat /opt/tomcat/webapps
 RUN chmod a+rwx /opt && chmod a+rwx /opt/tomcat/webapps
 
-# Install BIMserver
+# Download BIMserver into /webapps for autodeploy
 
 RUN wget https://github.com/opensourceBIM/BIMserver/releases/download/1.4.0-FINAL-2015-11-04/bimserver-1.4.0-FINAL-2015-11-04.war \
 	-O /opt/tomcat/webapps/BIMserver.war
@@ -49,7 +49,7 @@ ENV CATALINA_HOME=/opt/tomcat
 ENV JAVA_OPTS="-Djava.awt.headless=true -Djava.security.egd=file:/dev/./urandom"
 ENV CATALINA_OPTS="-Xms512M -Xmx1024M -server -XX:+UseParallelGC"
 
-# Add roles and increase file size for webapps to 200Mb
+# Add roles and increase file size for webapps to 500Mb
 
 ADD ./web.xml /opt/tomcat/webapps/manager/WEB-INF/web.xml
 ADD ./run.sh /opt/run.sh

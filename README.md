@@ -8,6 +8,7 @@ on a remote server with Ubuntu14.04x64. The Dockerfile will install dependencies
 
 ```bash
 $ wget -qO- https://get.docker.com/ | sh
+$ apt-get update
 ```
 
 and run the following (change username and password to your own choice):
