@@ -10,7 +10,6 @@ MAINTAINER connor@jenca.io
 
 RUN apt-get -y update && apt-get -y install \
 	default-jdk \
-	openjdk-7-jre \
 	git \
 	ant \
 	wget
@@ -29,7 +28,7 @@ RUN wget http://mirror.vorboss.net/apache/tomcat/tomcat-8/v8.0.30/bin/apache-tom
 RUN tar xvf /tmp/apache-tomcat-8.0.30.tar.gz -C /opt/tomcat --strip-components=1
 RUN rm -f /tmp/apache-tomcat-8.0.30.tar.gz
 
-# Set all correct permisions for group and user to install BIMserver and edit conf
+# Set all correct permissions for group and user to install BIMserver and edit conf
 
 RUN chgrp -R tomcat /opt/tomcat/conf
 RUN chmod g+rwx /opt/tomcat/conf
@@ -40,7 +39,7 @@ RUN chmod a+rwx /opt && chmod a+rwx /opt/tomcat/webapps
 
 # Download BIMserver into /webapps for autodeploy
 
-RUN wget https://github.com/opensourceBIM/BIMserver/releases/download/1.4.0-FINAL-2015-11-04/bimserver-1.4.0-FINAL-2015-11-04.war \
+RUN wget https://github.com/opensourceBIM/BIMserver/releases/download/1.4.0-FINAL-2016-01-05/bimserver-1.4.0-FINAL-2016-01-05.war \
 	-O /opt/tomcat/webapps/BIMserver.war
 
 # Set environment paths for Tomcat
