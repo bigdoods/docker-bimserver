@@ -8,11 +8,13 @@ MAINTAINER connor@jenca.io
 
 # Initialise software and update the repository sources list
 
-RUN apt-get -y update && apt-get -y install \
+RUN apt-get -y install \
 	default-jdk \
+	openjdk-7-jre \
 	git \
 	ant \
 	wget
+RUN apt-get -y update
 RUN echo "Europe/London" > /etc/timezone
 RUN dpkg-reconfigure -f noninteractive tzdata
 
