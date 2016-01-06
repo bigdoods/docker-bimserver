@@ -20,3 +20,5 @@ $ docker run -d \
 	--restart=always \
 	connoralexander/docker-bimserver
 ```
+
+This will pull the 'latest' tagged image. For other tags please see Tags on Dockerhub. To use a specific tag, put `:TAGNAME` after the docker image at the end of the run command.
