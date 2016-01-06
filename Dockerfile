@@ -18,7 +18,7 @@ RUN dpkg-reconfigure -f noninteractive tzdata
 
 ################## BEGIN INSTALLATION ######################
 
-# Create Tomcat root dir, set up users and install Tomcat
+# Create Tomcat root directory, set up users and install Tomcat
 
 RUN mkdir /opt/tomcat
 RUN groupadd tomcat
@@ -28,7 +28,7 @@ RUN wget http://mirror.vorboss.net/apache/tomcat/tomcat-8/v8.0.30/bin/apache-tom
 RUN tar xvf /tmp/apache-tomcat-8.0.30.tar.gz -C /opt/tomcat --strip-components=1
 RUN rm -f /tmp/apache-tomcat-8.0.30.tar.gz
 
-# Set all correct permissions for group and user to install BIMserver and edit conf
+# Set permissions for group and user to install BIMserver and edit conf
 
 RUN chgrp -R tomcat /opt/tomcat/conf
 RUN chmod g+rwx /opt/tomcat/conf
