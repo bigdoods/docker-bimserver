@@ -8,8 +8,9 @@ MAINTAINER connor@jenca.io
 
 # Initialise software and update the repository sources list
 
+RUN add-apt-repository -y ppa:openjdk-r/ppa
 RUN apt-get -y update && apt-get -y install \
-	default-jdk \
+	openjdk-8-jdk \
 	git \
 	ant \
 	wget
@@ -39,12 +40,12 @@ RUN chmod a+rwx /opt && chmod a+rwx /opt/tomcat/webapps
 
 # Download BIMserver into /webapps for autodeploy
 
-RUN wget https://github.com/opensourceBIM/BIMserver/releases/download/1.4.0-FINAL-2016-01-05/bimserver-1.4.0-FINAL-2016-01-05.war \
+RUN wget https://github.com/opensourceBIM/BIMserver/releases/download/1.4.0-FINAL-2015-11-04/bimserver-1.4.0-FINAL-2015-11-04.war \
 	-O /opt/tomcat/webapps/BIMserver.war
 
 # Set environment paths for Tomcat
 
-ENV JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64/jre
+ENV JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre
 ENV CATALINA_HOME=/opt/tomcat
 ENV JAVA_OPTS="-Djava.awt.headless=true -Djava.security.egd=file:/dev/./urandom"
 ENV CATALINA_OPTS="-Xms512M -Xmx1024M -server -XX:+UseParallelGC"
