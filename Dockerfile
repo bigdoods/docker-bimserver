@@ -8,7 +8,8 @@ MAINTAINER connor@jenca.io
 
 # Initialise software and update the repository sources list
 
-RUN add-apt-repository -y ppa:openjdk-r/ppa
+RUN apt-get -y install software-properties-common && \
+	add-apt-repository -y ppa:openjdk-r/ppa
 RUN apt-get -y update && apt-get -y install \
 	openjdk-8-jdk \
 	git \
