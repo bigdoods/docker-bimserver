@@ -8,6 +8,7 @@ MAINTAINER connor@jenca.io
 
 # Initialise software and update the repository sources list
 
+RUN apt-get update
 RUN apt-get -y install software-properties-common && \
 	add-apt-repository -y ppa:openjdk-r/ppa
 RUN apt-get -y update && apt-get -y install \
@@ -25,7 +26,7 @@ RUN dpkg-reconfigure -f noninteractive tzdata
 RUN mkdir /opt/tomcat
 RUN groupadd tomcat
 RUN useradd -s /bin/false -g tomcat -d /opt/tomcat tomcat
-RUN wget http://mirror.vorboss.net/apache/tomcat/tomcat-8/v8.0.30/bin/apache-tomcat-8.0.30.tar.gz \
+RUN wget http://archive.apache.org/dist/tomcat/tomcat-8/v8.0.3/bin/apache-tomcat-8.0.3.tar.gz \
 	-O /tmp/apache-tomcat-8.0.30.tar.gz
 RUN tar xvf /tmp/apache-tomcat-8.0.30.tar.gz -C /opt/tomcat --strip-components=1
 RUN rm -f /tmp/apache-tomcat-8.0.30.tar.gz
